@@ -3,12 +3,21 @@
     "version": "1.0.0",
     "description": "MERN Shop",
     "main": "server.js",
+    "type": "module",
     "scripts": {
-        "start": "node server.js"
+        "start": "node server.js",
+        "server": "nodemon server.js",
+        "client": "yarn --cwd ../frontend start",
+        "dev": "concurrently \"yarn run server\" \"yarn run client\""
     },
     "author": "tobiwankenobii",
     "license": "ISC",
     "dependencies": {
+        "dotenv": "^8.2.0",
         "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "concurrently": "^5.3.0",
+        "nodemon": "^2.0.6"
     }
 }
