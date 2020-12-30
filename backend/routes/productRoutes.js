@@ -4,7 +4,9 @@ import asyncHandler from 'express-async-handler';
 
 const router = express.Router();
 
-// @desc: Fetch list of products
+/*
+ * Fetch list of products
+ */
 router.get(
     '/',
     asyncHandler(async (req, res) => {
@@ -13,7 +15,9 @@ router.get(
     })
 );
 
-// @desc Fetch product by id
+/*
+ * Fetch product by id
+ */
 router.get(
     '/:id',
     asyncHandler(async (req, res) => {
