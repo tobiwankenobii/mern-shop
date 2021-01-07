@@ -50,7 +50,7 @@ const ProfileScreen = ({ history }) => {
                     </Message>
                 )}
                 {error && <Message variant="danger">{error}</Message>}
-                {loading && <Loader />}
+                {loading && !success && <Loader />}
                 <h2>User Profile</h2>
                 <Form onSubmit={submit}>
                     <Form.Group controlId="name">
@@ -59,7 +59,6 @@ const ProfileScreen = ({ history }) => {
                             type="name"
                             placeholder="Enter name"
                             value={name}
-                            required
                             onChange={(e) => setName(e.target.value)}
                         ></Form.Control>
                     </Form.Group>

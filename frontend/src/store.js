@@ -29,10 +29,20 @@ const cartItemsFromStorage = _cachedCartItems
     : [];
 
 const _cachedUserInfo = localStorage.getItem('userInfo');
-const userInfoFromStorage = _cachedCartItems ? JSON.parse(_cachedUserInfo) : [];
+const userInfoFromStorage = _cachedCartItems
+    ? JSON.parse(_cachedUserInfo)
+    : null;
+
+const _cachedShippingAddress = localStorage.getItem('shippingAddress');
+const shippingAddressFromStorage = _cachedShippingAddress
+    ? JSON.parse(_cachedShippingAddress)
+    : {};
 
 const initialState = {
-    cart: { cartItems: cartItemsFromStorage },
+    cart: {
+        cartItems: cartItemsFromStorage,
+        shippingAddress: shippingAddressFromStorage,
+    },
     userLogin: { userInfo: userInfoFromStorage },
 };
 
