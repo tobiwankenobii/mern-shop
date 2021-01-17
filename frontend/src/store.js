@@ -12,6 +12,14 @@ import {
     userRegisterReducer,
     userUpdateProfileReducer,
 } from './reducers/userReducers';
+import {
+    orderCreateReducer,
+    orderDetailsReducer,
+    orderPayReducer,
+    orderDeliverReducer,
+    orderListMyReducer,
+    orderListReducer,
+} from './reducers/orderReducers';
 
 const reducer = combineReducers({
     productList: productListReducer,
@@ -21,6 +29,12 @@ const reducer = combineReducers({
     userRegister: userRegisterReducer,
     userDetails: userDetailsReducer,
     userUpdateProfile: userUpdateProfileReducer,
+    orderCreate: orderCreateReducer,
+    orderDetails: orderDetailsReducer,
+    orderPay: orderPayReducer,
+    orderDeliver: orderDeliverReducer,
+    orderListMy: orderListMyReducer,
+    orderList: orderListReducer,
 });
 
 const _cachedCartItems = localStorage.getItem('cartItems');
@@ -29,7 +43,7 @@ const cartItemsFromStorage = _cachedCartItems
     : [];
 
 const _cachedUserInfo = localStorage.getItem('userInfo');
-const userInfoFromStorage = _cachedCartItems
+const userInfoFromStorage = _cachedUserInfo
     ? JSON.parse(_cachedUserInfo)
     : null;
 
