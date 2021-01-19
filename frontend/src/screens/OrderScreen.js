@@ -83,8 +83,8 @@ const OrderScreen = ({ match, history }) => {
         successPay,
         successDeliver,
         order,
-        history,
         userInfo,
+        history,
     ]);
 
     const successPaymentHandler = (paymentResult) => {
