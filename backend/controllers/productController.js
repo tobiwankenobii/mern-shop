@@ -66,7 +66,7 @@ const createProduct = asyncHandler(async (req, res) => {
         brand: 'Sample brand',
         category: 'Sample category',
         countInStock: 0,
-        numReviews: 0,
+        numberOfReviews: 0,
         description: 'Sample description',
     });
 
@@ -134,7 +134,7 @@ const createProductReview = asyncHandler(async (req, res) => {
 
         product.reviews.push(review);
 
-        product.numReviews = product.reviews.length;
+        product.numberOfReviews = product.reviews.length;
 
         product.rating =
             product.reviews.reduce((acc, item) => item.rating + acc, 0) /
