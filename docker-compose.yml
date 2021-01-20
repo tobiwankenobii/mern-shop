@@ -3,22 +3,18 @@ version: '3.3'
 services:
     react:
         container_name: mern_shop_react
-        build: 
+        image: tobiwankenobii/mern_shop_react
+        build:
             context: ./frontend
             dockerfile: Dockerfile
-        volumes:
-          - ./frontend:/app
-          - /app/node_modules
         ports:
-          - 3000:3000
+            - 3000:3000
 
     express:
-      container_name: mern_shop_express
-      build: 
-          context: ./backend
-          dockerfile: Dockerfile
-      volumes:
-        - ./backend:/app
-        - /app/node_modules
-      ports:
-        - 5000:5000
+        container_name: mern_shop_express
+        image: tobiwankenobii/mern_shop_express
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
+        ports:
+            - 5000:5000

@@ -7,11 +7,7 @@ Pretty straightforward, probably with tons of bad practices, but this was my fir
 
 ## Getting started:
 
-Quick note
-
-```powershell
-work-in --progress
-```
+### Local setup (`main` branch)
 
 Build compose images
 
@@ -24,6 +20,55 @@ Create compose containers
 ```powershell
 docker-compose up
 ```
+
+### Azure setup (`azure-prod` branch)
+
+Login to Azure with DockerCLI
+
+```
+docker login azure
+```
+
+Create ACI context
+
+```
+docker context create aci <aci_name>
+```
+
+Make sure you are using the default context
+
+```
+docker context use default
+```
+
+Change the Docker ID in the docker-compose.yml
+tobiwankenobii -> <your_id>
+
+Build docker images
+
+```
+docker-compose build
+```
+
+Push docker images
+
+```
+docker-compose push
+```
+
+Change the context to one you created previously
+
+```
+docker context use <aci_name>
+```
+
+Start the containers (yes, docker-compose without the dash)
+
+```
+docker compose up
+```
+
+All good, `docker ps` should show you the IPs.
 
 ## Environment Variables
 
